@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4d896837.chunk.css",
+    "main.js": "/static/js/main.dade29b1.chunk.js",
+    "main.js.map": "/static/js/main.dade29b1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
+    "static/js/2.f763f230.chunk.js": "/static/js/2.f763f230.chunk.js",
+    "static/js/2.f763f230.chunk.js.map": "/static/js/2.f763f230.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d69e81a3fedcf4c7fe2b05be9dbf569c.js": "/precache-manifest.d69e81a3fedcf4c7fe2b05be9dbf569c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.4d896837.chunk.css.map": "/static/css/main.4d896837.chunk.css.map",
+    "static/js/2.f763f230.chunk.js.LICENSE.txt": "/static/js/2.f763f230.chunk.js.LICENSE.txt",
+    "static/media/global.scss": "/static/media/Lucida-Grande-Regular.cab01315.ttf",
+    "static/media/check.0b327c3e.svg": "/static/media/check.0b327c3e.svg",
+    "static/media/delete.svg": "/static/media/delete.59b5020d.svg",
+    "static/media/edit.svg": "/static/media/edit.f9300458.svg",
+    "static/media/envlove.svg": "/static/media/envlove.119fff4e.svg",
+    "static/media/fire.svg": "/static/media/fire.183d7860.svg",
+    "static/media/path.svg": "/static/media/path.1b5f94f9.svg",
+    "static/media/search.svg": "/static/media/search.3827a244.svg",
+    "static/media/sorting.svg": "/static/media/sorting.7f67ce71.svg",
+    "static/media/view.svg": "/static/media/view.94a25b53.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83c3e0c4.js",
+    "static/js/2.f763f230.chunk.js",
+    "static/css/main.4d896837.chunk.css",
+    "static/js/main.dade29b1.chunk.js"
+  ]
+}

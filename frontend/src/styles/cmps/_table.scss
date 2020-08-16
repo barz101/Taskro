@@ -1,0 +1,220 @@
+@mixin mobile-table {
+    display: block;
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        border-collapse: collapse;
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #eee;
+        padding: 0.5em 0;
+        &.odd {
+            background: $clr4;
+        }
+        &.even {
+            background: #fbfbfb;
+        }
+    }
+    td {
+        border: none;
+        border-bottom: 1px solid rgb(241, 241, 241);
+        position: relative;
+        padding: 0.7em 0;
+        white-space: normal;
+        text-align: center;
+        svg {
+            margin-left: 10px;
+            width: em(20px);
+            height: em(20px);
+        }
+        .actions {
+            cursor: pointer;
+            color: #4a4a4a;
+            font-size: 14px;
+            .icon {
+                width: 27px;
+                height: 27px;
+            }
+        }
+        .expanded {
+            display: none;
+        }
+        &:nth-of-type(5) {
+            .expanded {
+                display: block;
+                border-top: 1px solid rgb(241, 241, 241);
+                margin-top: 0.7em;
+                padding-top: 0.7em;
+            }
+        }
+    }
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        span {
+            &.expanded {
+                display: block;
+            }
+        }
+    }
+
+    td:before {
+        content: attr(data-title);
+    }
+    td:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+        margin: 0 0;
+        justify-content: space-around !important;
+    }
+    tbody tr {
+        color: #4a4a4a;
+    }
+}
+
+table {
+//     thead {
+//         tr {
+//             :nth-child(4) {
+//                 padding: 0 10px
+//             }
+//         }
+//     }
+    margin-top: 10px;
+    .status {
+      padding: 0 10px
+    }
+    .checkbox {
+        margin: 0 5px;
+        user-select: none;
+    }
+
+    .checkbox .square {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: inset 0px 0px 0px 2px #ddd;
+        display: inline-block;
+    }
+
+    .checkbox input[type="checkbox"] {
+        display: none;
+    }
+
+    .checkbox input:checked + .square {
+        background-image: url("../assets/svgs/picked.svg");
+    }
+
+    thead {
+        tr {
+            th span {
+                margin-right: 25px;
+            }
+        }
+    }
+
+    @include for-mobile-layout {
+        @include mobile-table;
+    }
+    @include for-narrow-layout {
+        background: none;
+        border-collapse: collapse;
+
+        thead {
+            background-color: #efefef;
+            padding: 2px 0;
+            border: 1px solid #cecece;
+        }
+        th {
+            img {
+                width: 6px;
+                height: 9px;
+            }
+            text-align: start;
+            color: $clr1;
+            background: none;
+            color: #000000;
+            font-family: Heebo-Bold;
+            font-size: 16px;
+            height: 42px;
+            padding-left: 3px;
+            a,
+            a.active {
+                color: $clr1;
+            }
+        }
+        tbody tr {
+            color: #3a3e69;
+            font-size: rem(15px);
+            font-weight: 400;
+            border: 1px solid #cecece;
+            &:hover {
+                transition: 0.4s;
+                background-color: #eaeffa;
+            }
+        }
+        td {
+            padding: em(16px) 0;
+            img {
+                &.icon {
+                    width: 24px;
+                    height: 22px;
+                }
+            }
+            svg {
+                margin-left: 10px;
+                width: 15px;
+                height: 13px;
+                &.white {
+                    opacity: 0;
+                }
+            }
+            & td:last-child {
+                height: 40px;
+                margin-top: 20px;
+                font-size: rem(14px);
+                color: rgb(122, 117, 117);
+                display: block;
+            }
+            span {
+                &.hidden {
+                    display: none;
+                }
+                &.expanded {
+                    display: block;
+                    padding-top: em(10px);
+                    font-size: rem(13px);
+                }
+            }
+
+            .actions {
+                cursor: pointer;
+                span {
+                    margin: 0 0;
+                    height: auto;
+                    font-size: rem(10px);
+                }
+            }
+        }
+        td:last-of-type {
+            line-height: em(15px);
+            margin-left: 25px;
+        }
+    }
+}
