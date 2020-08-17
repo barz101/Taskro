@@ -33,13 +33,11 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo, closeModal }) => {
     <form onSubmit={handleFormSubmit} className="new-todo flex column align-center">
       <button onClick={handleClose} className="close">X</button>
       <label htmlFor="taskTitle">שם המשימה</label>
-      <input id="taskTitle" type="text" name="taskTitle" value={todo.taskTitle} onChange={handleInputChange} />
+      <input required id="taskTitle" type="text" name="taskTitle" value={todo.taskTitle} onChange={handleInputChange} />
       <label htmlFor="category">קטגוריה</label>
-      <input type="text" id="category" name="category" value={todo.category} onChange={handleInputChange} />
+      <input required type="text" id="category" name="category" value={todo.category} onChange={handleInputChange} />
       <label htmlFor="priority">עדיפות</label>
-      <input type="text" id="priority" name="priority" value={todo.priority} onChange={handleInputChange} />
-      {/* <label htmlFor="address">כתובת</label>
-      <input type="text" id="address" name="address" placeholder={''} /> */}
+      <input required  type="text" id="priority" name="priority" value={todo.priority} onChange={handleInputChange} />
       <button onClick={handleFormSubmit}>הוסף משימה חדשה</button>
     </form>
   )

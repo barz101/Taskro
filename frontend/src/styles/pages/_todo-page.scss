@@ -58,6 +58,9 @@
                 color: #686769;
                 transition: 0.3s;
             }
+            &.active-page {
+                font-weight: bold;
+            }
         }
         @include for-mobile-layout {
             margin-top: 1em;
@@ -75,17 +78,16 @@
                 margin-top: 1em;
             }
             .result-input {
+                width: 22px;
+                font-size: rem(11px);
+                color: #686769;
                 margin: 0 6px;
                 font-family: sans-serif;
                 border-radius: 5px;
                 border: 1px solid #d0d0d0;
                 background-color: #f6f5f6;
                 padding: 2px 4px;
-                img {
-                    margin-left: 6px;
-                    width: 5px;
-                    height: 6px;
-                }
+                text-align: center;
             }
         }
     }

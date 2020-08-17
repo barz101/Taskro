@@ -45,14 +45,17 @@ export const TodoListItem: React.FC<Props> = ({ todo, deleteTodo }) => {
   }
   const handleCheckBox = () => {
     setChecked(!checked);
+    const todo = currTodo
     if (currTodo.doneAt === null) {
-      setTodo({ ...currTodo, doneAt: Date.now() })
-      todoService.update({ ...currTodo, doneAt: Date.now() }).then(() => {
+      todo.doneAt = Date.now()
+      todoService.update(todo).then(() => {
+        setTodo(todo)
       })
     }
     else {
-      setTodo({ ...currTodo, doneAt: null })
-      todoService.update({ ...currTodo, doneAt: null }).then(() => {
+      todo.doneAt = null;
+      todoService.update(todo).then(() => {
+        setTodo(todo)
       })
     }
   }
@@ -71,19 +74,20 @@ export const TodoListItem: React.FC<Props> = ({ todo, deleteTodo }) => {
         </label>
         <ContentEditable html={refTaskTitle.current} onBlur={handleBlur} onChange={handleChange}
           disabled={!isEditOn} id={'taskTitle'}
+          className={isEditOn ? 'editable' : ''}
         />
       </td>
       <td>
         <ContentEditable html={refCategory.current} onBlur={handleBlur} onChange={handleChange}
           disabled={!isEditOn} id={'category'}
+          className={isEditOn ? 'editable' : ''}
         />
-        <span className={isViewOn ? 'expanded' : 'hidden'}>מידע נוסף: עוד פרטים</span>
       </td>
       <td>
         <ContentEditable html={refPriority.current} onBlur={handleBlur} onChange={handleChange}
           disabled={!isEditOn} id={'priority'}
+          className={isEditOn ? 'editable priority' : ''}
         />
-        <span className={isViewOn ? 'expanded' : 'hidden'}>מידע נוסף: עוד פרטים</span>
       </td>
       <td className="status">
         <Check className={currTodo.doneAt ? '' : 'white'}></Check>
@@ -93,7 +97,6 @@ export const TodoListItem: React.FC<Props> = ({ todo, deleteTodo }) => {
       </td>
       <td>
         <span>{dayjs(currTodo.createdAt).format('DD.MM.YYYY')}</span>
-        <span className={isViewOn ? 'expanded' : 'hidden'}>מידע נוסף: עוד פרטים</span>
       </td>
       <td className="flex space-between">
         <span className="actions">

@@ -16,7 +16,7 @@ class TodoRoutes {
         this.router.get('/:id/:filter', token_validition_1.default, todosController_1.default.getByFilter);
         this.router.post('/', token_validition_1.default, todosController_1.default.create);
         this.router.put('/:id', token_validition_1.default, todosController_1.default.update);
-        this.router.delete('/:id', todosController_1.default.delete);
+        this.router.delete('/:id', token_validition_1.default, todosController_1.default.delete);
     }
 }
 exports.default = new TodoRoutes().router;

@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8383107c76a7cbfa2c2472de5ffeb844",
+    "revision": "abec04e7293b55cc1df8ef3dc3519b31",
     "url": "/index.html"
   },
   {
-    "revision": "023de8ed0c2a51a899bf",
-    "url": "/static/css/main.4d896837.chunk.css"
+    "revision": "8ae7cad87c86a610e0f0",
+    "url": "/static/css/main.4b41f416.chunk.css"
   },
   {
-    "revision": "5a55fdba53da40791096",
-    "url": "/static/js/2.f763f230.chunk.js"
+    "revision": "73916e359121bfe4fd76",
+    "url": "/static/js/2.9b84201c.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/static/js/2.f763f230.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.9b84201c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "023de8ed0c2a51a899bf",
-    "url": "/static/js/main.dade29b1.chunk.js"
+    "revision": "8ae7cad87c86a610e0f0",
+    "url": "/static/js/main.030eacf7.chunk.js"
   },
   {
     "revision": "73635f645c271e35ff15",
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Lucida-Grande-Regular.cab01315.ttf"
   },
   {
-    "revision": "0b327c3e26b9b6c708040ff6f36a305b",
-    "url": "/static/media/check.0b327c3e.svg"
+    "revision": "8148461a660f1690dd17bf78af31ce04",
+    "url": "/static/media/check.8148461a.svg"
   },
   {
     "revision": "59b5020d832de9de34b13ac8b354045b",
@@ -56,12 +56,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/envlove.119fff4e.svg"
   },
   {
-    "revision": "183d7860c46aeffb7e3726394d3452e3",
-    "url": "/static/media/fire.183d7860.svg"
+    "revision": "c1c00475f63892c8613f3950e888750f",
+    "url": "/static/media/landing-page2.c1c00475.png"
   },
   {
-    "revision": "1b5f94f968e74ec77f651b6d2812893d",
-    "url": "/static/media/path.1b5f94f9.svg"
+    "revision": "ade86f8e7a7215606512a92b02e60970",
+    "url": "/static/media/landing-page3.ade86f8e.png"
+  },
+  {
+    "revision": "d1050ded615dafb9e2deda8173ca1164",
+    "url": "/static/media/landingPage.d1050ded.png"
+  },
+  {
+    "revision": "9811b9eb1bbafb933cad896892bec3dd",
+    "url": "/static/media/picked.9811b9eb.svg"
   },
   {
     "revision": "3827a2445145aece061e11aab1c1b22a",

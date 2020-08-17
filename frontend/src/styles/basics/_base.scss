@@ -35,6 +35,9 @@ input {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    &:focus {
+        outline-color: #9a999b;
+    }
 }
 
 a {

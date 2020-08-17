@@ -9,11 +9,11 @@ export default {
 }
 
 function query() {
-    const user =   JSON.parse(sessionStorage.user);
+    const user =   _getUser()
     return (GET(`todos/${user.userID}`));
 }
-function getByFilter(filter ='כלים') {
-    const user =   JSON.parse(sessionStorage.user);
+function getByFilter(filter:string) {
+    const user =  _getUser()
     return (GET(`todos/${user.userID}/${filter}`));
 }
 
@@ -22,9 +22,14 @@ async function add(todo: object) {
 }
 
 function update(todo: Todo) {
-    return PUT(`todos/${todo.todoID}`, todo);
+    return  PUT(`todos/${todo.todoID}`, todo);
 }
 
 function deleteTodo(todoId: string) {
     return DELETE(`todos/${todoId}`);
+}
+
+function _getUser() {
+    const user =   JSON.parse(sessionStorage.user);
+    return user;
 }

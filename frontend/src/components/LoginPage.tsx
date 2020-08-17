@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { Link, useHistory } from "react-router-dom";
 import userService from '../services/userService';
 import { withRouter } from 'react-router';
@@ -10,11 +9,11 @@ function LoginPage() {
     const [user, setUser] = useState(initialFormState)
     const [errorMsg, setErrorMsg] = useState()
 
-    const handleInputChange = (ev) => {
+    const handleInputChange = (ev:any) => {
         const { name, value } = ev.target
         setUser({ ...user, [name]: value })
     }
-    const handleFormSubmit = (ev) => {
+    const handleFormSubmit = (ev:any) => {
         ev.preventDefault()
         userService.login(user).then((result) => {
             if (result.userID) {

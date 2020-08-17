@@ -19,7 +19,6 @@ class TodosController {
             const { id } = req.params;
             const todos = yield database_1.default.query('SELECT * FROM todos WHERE userID = ?', [id]);
             if (!todos.length) {
-                console.log('todos123', todos.length);
                 res.status(404).json({ data: "no todos found" });
             }
             res.send(todos);
@@ -27,12 +26,10 @@ class TodosController {
     }
     getByFilter(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('got to func');
             const { id, filter } = req.params;
             var sql = `SELECT * FROM todos WHERE taskTitle LIKE "%${filter}%" AND userID = ?`;
             const todo = yield database_1.default.query(sql, [id]);
             if (todo.length > 0) {
-                console.log(todo, 'todo');
                 res.send(todo);
             }
             else
@@ -49,14 +46,12 @@ class TodosController {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             const oldTodo = req.body;
-            yield database_1.default.query('UPDATE todos set ? WHERE id = ?', [req.body, id]);
-            res.json({ message: "The todo was Updated" });
+            const newTodo = yield database_1.default.query('UPDATE todos set ? WHERE todoId = ?', [req.body, id]);
+            res.json(newTodo);
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('here', req.params);
-            console.log('here2', req.params.id);
             const { id } = req.params;
             yield database_1.default.query('DELETE FROM todos WHERE todoId = ?', [id]);
             res.json({ message: "The todo was deleted" });

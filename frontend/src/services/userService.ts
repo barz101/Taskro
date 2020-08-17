@@ -7,7 +7,7 @@ export default {
     logout
 }
 
-async function login(user: string) {
+async function login(user: object) {
     const result: any = await POST(`users/login`, user)
     if (result.success === 1) {
         return _handleLogin(result.user)

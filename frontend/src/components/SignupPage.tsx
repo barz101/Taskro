@@ -8,13 +8,13 @@ function SignupPage() {
     const initialFormState = { userName: '', userPassword: '', userEmail: '' }
     const [user, setUser] = useState(initialFormState)
 
-    const handleInputChange = (ev) => {
+    const handleInputChange = (ev:any) => {
         const { name, value } = ev.target
         setUser({ ...user, [name]: value })
     }
-    const handleFormSubmit = (ev) => {
+    const handleFormSubmit = (ev:any) => {
         ev.preventDefault()
-        const newUser = user;
+        const newUser:any = user;
         newUser.userID = shortid.generate();
        userService.signup(newUser).then((user) => {
         history.push('/todos')

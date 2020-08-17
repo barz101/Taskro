@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import logo from '../styles/assets/imgs/logo.png';
 import envloveIcon from '../styles/assets/svgs/envlove.svg';
 import { Link, useHistory, useLocation } from 'react-router-dom';
@@ -12,9 +12,7 @@ export default function Header() {
   const [currLocation, setLocation] = useState();
 
   useEffect(() => {
-    const loc:any = window.location.pathname;
-    console.log(loc);
-    
+    const loc:any = window.location.pathname;  
     setLocation(loc)
     if (sessionStorage.user) {
       const user = JSON.parse(sessionStorage.user)
@@ -22,7 +20,6 @@ export default function Header() {
     }
     else setLoggedIn(null)
   }, [location])
-
 
   return (
     <header className={`flex align-center space-between ${currLocation === '/' ? 'home' : ''}`}>
@@ -33,8 +30,8 @@ export default function Header() {
           <div className={`bar3 ${isMenuOpen ? 'close-icon' : ''}`}></div>
         </div>
         <div></div> {!loggedIn && <div className="property-type-btns">
-          <button><Link to="/signup">הירשם</Link></button>
-          <button><Link to="/login">התחבר</Link></button>
+          <button><Link to="/signup"> הירשם </Link></button>
+          <button><Link to="/login"> התחבר </Link></button>
         </div>}
         {loggedIn && <div className="welcome flex">
           <div>{loggedIn} ברוך הבא</div>
@@ -43,9 +40,9 @@ export default function Header() {
             history.push('/')
           })}>התנתק</button>
         </div>}
-        <span>
-          המשימות שלך
-        </span>
+        {loggedIn && <span>
+        <Link to="/todos">המשימות שלך</Link>
+        </span>}
         <span>אודות</span>
         <span>
           <img className="icon" alt="envlove" src={envloveIcon}></img>

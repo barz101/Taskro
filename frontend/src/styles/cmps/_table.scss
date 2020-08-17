@@ -87,16 +87,16 @@
 }
 
 table {
-//     thead {
-//         tr {
-//             :nth-child(4) {
-//                 padding: 0 10px
-//             }
-//         }
-//     }
+    //     thead {
+    //         tr {
+    //             :nth-child(4) {
+    //                 padding: 0 10px
+    //             }
+    //         }
+    //     }
     margin-top: 10px;
     .status {
-      padding: 0 10px
+        padding: 0 10px;
     }
     .checkbox {
         margin: 0 5px;
@@ -171,6 +171,13 @@ table {
         }
         td {
             padding: em(16px) 0;
+            .editable {
+                box-shadow: 0 0 0 1px rgb(148, 147, 147);
+                padding: 5px;
+                &.priority {
+                    margin-right: 3px;
+                }
+            }
             img {
                 &.icon {
                     width: 24px;
