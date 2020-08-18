@@ -5,7 +5,7 @@ import pool from '../database';
 class TodosController {
     public async list(req: Request, res: Response): Promise<void> {
         const { id } = req.params;
-        const todos = await pool.query('SELECT * FROM todos WHERE userID = ?', [id]);
+        const todos = await pool.query('SELECT * FROM todos WHERE userID = ? ORDER BY createdAt DESC', [id]);
         if (!todos.length) {
             res.status(404).json({ data: "no todos found" });
         }

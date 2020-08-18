@@ -25,16 +25,20 @@ function TodoPage() {
         const userTotalPages = Math.ceil(todos.length / pagination.amountPerPage)
         setPage(pagination => ({ ...pagination, totalPages: userTotalPages }))
     }, [todos])
+
     const addTodo: AddTodo = (newTodo: Todo) => {
-        todoService.add(newTodo).then((todo) => {
+        todoService.add(newTodo).then(() => {
+            todoService.query().then((todos: any) => {
+                setTodos(todos);
+            })
         })
-        setTodos([...todos, newTodo]);
     }
 
     const deleteTodo: DeleteTodo = (todoId: string) => {
         todoService.deleteTodo(todoId).then((todoId) => {
-            todos.splice(todos.indexOf(todoId), 1)
-            setTodos([todos]);
+            todoService.query().then((todos: any) => {
+                setTodos(todos);
+            })
         })
     }
 

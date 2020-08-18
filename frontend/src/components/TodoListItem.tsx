@@ -61,6 +61,8 @@ export const TodoListItem: React.FC<Props> = ({ todo, deleteTodo }) => {
   }
 
   const handleEdit = () => {
+    console.log(currTodo);
+    
     setEditing(!isEditOn)
   }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { TodoListItem } from './TodoListItem';
 
 interface Props {
@@ -7,6 +7,7 @@ interface Props {
 }
 
 export const TodoList: React.FC<Props> = ({ todos, deleteTodo }) => {
+
   return (
     <>
       {todos.map(todo => (

@@ -17,7 +17,7 @@ class TodosController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const todos = yield database_1.default.query('SELECT * FROM todos WHERE userID = ?', [id]);
+            const todos = yield database_1.default.query('SELECT * FROM todos WHERE userID = ? ORDER BY createdAt DESC', [id]);
             if (!todos.length) {
                 res.status(404).json({ data: "no todos found" });
             }
